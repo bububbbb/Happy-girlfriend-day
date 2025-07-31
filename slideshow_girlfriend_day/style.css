@@ -1,59 +1,84 @@
 body {
-    font-family: 'Dancing Script', cursive;
-    background-color: #fce4ec;
-    color: #4a148c;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     overflow: hidden;
-}
-
-.slideshow-container {
-    max-width: 800px;
-    position: relative;
-    margin: auto;
-}
-
-.mySlides {
-    display: none;
     text-align: center;
 }
 
-.mySlides img {
-    width: 100%;
-    height: auto;
+.container {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: bounceIn 1s ease-out;
 }
 
-.text {
-    color: #fff;
-    font-size: 2.5em;
-    padding: 20px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 0 20px 20px;
-    opacity: 0; /* Awalnya disembunyikan */
-    transition: opacity 2s ease-in-out;
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Animasi Fade */
-.fade {
-    animation-name: fade;
-    animation-duration: 2s;
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Awalnya disembunyikan untuk efek fade-in */
 }
 
-@keyframes fade {
-    from { opacity: .4; }
-    to { opacity: 1; }
+.fade-in {
+    animation: fadeInAnimation 2s forwards;
 }
 
-/* Animasi untuk teks */
-.text-show {
+@keyframes fadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-zoom {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-zoom:hover {
+    transform: scale(1.1);
+}
+
+.text-container {
+    margin-top: 2em;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Tampilan teks saat sudah muncul */
+.visible {
     opacity: 1;
+    transform: translateY(0);
 }
