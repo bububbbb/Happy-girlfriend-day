@@ -1,0 +1,59 @@
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #fce4ec;
+    color: #4a148c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    color: #fff;
+    font-size: 2.5em;
+    padding: 20px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+    opacity: 0; /* Awalnya disembunyikan */
+    transition: opacity 2s ease-in-out;
+}
+
+/* Animasi Fade */
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
+
+/* Animasi untuk teks */
+.text-show {
+    opacity: 1;
+}
